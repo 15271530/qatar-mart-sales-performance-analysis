@@ -1,1 +1,410 @@
+/*
+QATAR MART RETAIL & E-COMMERCE
+04 - ROOT CAUSE ANALYSIS
+
+Business question:
+"What caused the revenue decline in February 2026?"
+
+Approach:
+1. Compare January 2026 vs February 2026.
+2. Decompose revenue movement into orders, units, and AOV.
+3. Identify channel contribution to the decline.
+4. Identify geographic contribution.
+5. Identify category contribution.
+6. Examine order-status changes.
+7. Produce a ranked list of decline drivers.
+
+Important:
+This script identifies associations and contribution patterns.
+It does not establish causal proof by itself.
+*/
+
+-- ============================================================
+-- 1. JANUARY VS FEBRUARY 2026 KPI COMPARISON
+-- ============================================================
+
+WITH monthly AS (
+    SELECT
+        MONTH(order_date) AS month_num,
+        SUM(sales_amount) AS revenue,
+        COUNT(DISTINCT order_id) AS orders,
+        SUM(quantity) AS units,
+        SUM(sales_amount) /
+            COUNT(DISTINCT order_id) AS aov
+    FROM qatar_mart_sales
+    WHERE order_date >= '2026-01-01'
+      AND order_date < '2026-03-01'
+    GROUP BY MONTH(order_date)
+)
+SELECT
+    MAX(CASE WHEN month_num = 1 THEN revenue END) AS jan_revenue,
+    MAX(CASE WHEN month_num = 2 THEN revenue END) AS feb_revenue,
+
+    ROUND(
+        (
+            MAX(CASE WHEN month_num = 2 THEN revenue END) -
+            MAX(CASE WHEN month_num = 1 THEN revenue END)
+        )
+        /
+        NULLIF(MAX(CASE WHEN month_num = 1 THEN revenue END), 0)
+        * 100,
+        2
+    ) AS revenue_change_pct,
+
+    MAX(CASE WHEN month_num = 1 THEN orders END) AS jan_orders,
+    MAX(CASE WHEN month_num = 2 THEN orders END) AS feb_orders,
+
+    ROUND(
+        (
+            MAX(CASE WHEN month_num = 2 THEN orders END) -
+            MAX(CASE WHEN month_num = 1 THEN orders END)
+        )
+        /
+        NULLIF(MAX(CASE WHEN month_num = 1 THEN orders END), 0)
+        * 100,
+        2
+    ) AS orders_change_pct,
+
+    MAX(CASE WHEN month_num = 1 THEN units END) AS jan_units,
+    MAX(CASE WHEN month_num = 2 THEN units END) AS feb_units,
+
+    ROUND(
+        (
+            MAX(CASE WHEN month_num = 2 THEN units END) -
+            MAX(CASE WHEN month_num = 1 THEN units END)
+        )
+        /
+        NULLIF(MAX(CASE WHEN month_num = 1 THEN units END), 0)
+        * 100,
+        2
+    ) AS units_change_pct,
+
+    ROUND(
+        MAX(CASE WHEN month_num = 1 THEN aov END),
+        2
+    ) AS jan_aov,
+
+    ROUND(
+        MAX(CASE WHEN month_num = 2 THEN aov END),
+        2
+    ) AS feb_aov,
+
+    ROUND(
+        (
+            MAX(CASE WHEN month_num = 2 THEN aov END) -
+            MAX(CASE WHEN month_num = 1 THEN aov END)
+        )
+        /
+        NULLIF(MAX(CASE WHEN month_num = 1 THEN aov END), 0)
+        * 100,
+        2
+    ) AS aov_change_pct
+FROM monthly;
+
+-- ============================================================
+-- 2. CHANNEL CONTRIBUTION TO FEBRUARY REVENUE DECLINE
+-- Positive decline_contribution = channel declined.
+-- Negative value = channel grew and offset the overall decline.
+-- ============================================================
+
+WITH channel_monthly AS (
+    SELECT
+        sales_channel,
+        MONTH(order_date) AS month_num,
+        SUM(sales_amount) AS revenue
+    FROM qatar_mart_sales
+    WHERE order_date >= '2026-01-01'
+      AND order_date < '2026-03-01'
+    GROUP BY sales_channel, MONTH(order_date)
+),
+channel_change AS (
+    SELECT
+        sales_channel,
+        MAX(CASE WHEN month_num = 1 THEN revenue ELSE 0 END) AS jan_revenue,
+        MAX(CASE WHEN month_num = 2 THEN revenue ELSE 0 END) AS feb_revenue
+    FROM channel_monthly
+    GROUP BY sales_channel
+)
+SELECT
+    sales_channel,
+    ROUND(jan_revenue, 2) AS jan_revenue,
+    ROUND(feb_revenue, 2) AS feb_revenue,
+    ROUND(feb_revenue - jan_revenue, 2) AS revenue_change,
+    ROUND(
+        (feb_revenue - jan_revenue) /
+        NULLIF(jan_revenue, 0) * 100,
+        2
+    ) AS revenue_change_pct,
+    ROUND(
+        jan_revenue - feb_revenue,
+        2
+    ) AS decline_contribution
+FROM channel_change
+ORDER BY decline_contribution DESC;
+
+-- ============================================================
+-- 3. CITY CONTRIBUTION TO FEBRUARY DECLINE
+-- ============================================================
+
+WITH city_monthly AS (
+    SELECT
+        city,
+        MONTH(order_date) AS month_num,
+        SUM(sales_amount) AS revenue
+    FROM qatar_mart_sales
+    WHERE order_date >= '2026-01-01'
+      AND order_date < '2026-03-01'
+    GROUP BY city, MONTH(order_date)
+),
+city_change AS (
+    SELECT
+        city,
+        MAX(CASE WHEN month_num = 1 THEN revenue ELSE 0 END) AS jan_revenue,
+        MAX(CASE WHEN month_num = 2 THEN revenue ELSE 0 END) AS feb_revenue
+    FROM city_monthly
+    GROUP BY city
+)
+SELECT
+    city,
+    ROUND(jan_revenue, 2) AS jan_revenue,
+    ROUND(feb_revenue, 2) AS feb_revenue,
+    ROUND(feb_revenue - jan_revenue, 2) AS revenue_change,
+    ROUND(
+        (feb_revenue - jan_revenue) /
+        NULLIF(jan_revenue, 0) * 100,
+        2
+    ) AS revenue_change_pct,
+    ROUND(jan_revenue - feb_revenue, 2) AS decline_contribution
+FROM city_change
+ORDER BY decline_contribution DESC;
+
+-- ============================================================
+-- 4. CATEGORY CONTRIBUTION TO FEBRUARY DECLINE
+-- ============================================================
+
+WITH category_monthly AS (
+    SELECT
+        product_category,
+        MONTH(order_date) AS month_num,
+        SUM(sales_amount) AS revenue
+    FROM qatar_mart_sales
+    WHERE order_date >= '2026-01-01'
+      AND order_date < '2026-03-01'
+    GROUP BY product_category, MONTH(order_date)
+),
+category_change AS (
+    SELECT
+        product_category,
+        MAX(CASE WHEN month_num = 1 THEN revenue ELSE 0 END) AS jan_revenue,
+        MAX(CASE WHEN month_num = 2 THEN revenue ELSE 0 END) AS feb_revenue
+    FROM category_monthly
+    GROUP BY product_category
+)
+SELECT
+    product_category,
+    ROUND(jan_revenue, 2) AS jan_revenue,
+    ROUND(feb_revenue, 2) AS feb_revenue,
+    ROUND(feb_revenue - jan_revenue, 2) AS revenue_change,
+    ROUND(
+        (feb_revenue - jan_revenue) /
+        NULLIF(jan_revenue, 0) * 100,
+        2
+    ) AS revenue_change_pct,
+    ROUND(jan_revenue - feb_revenue, 2) AS decline_contribution
+FROM category_change
+ORDER BY decline_contribution DESC;
+
+-- ============================================================
+-- 5. CHANNEL × CITY DECLINE MATRIX
+-- Helps identify combinations such as Store + Al Rayyan.
+-- ============================================================
+
+WITH segment_monthly AS (
+    SELECT
+        sales_channel,
+        city,
+        MONTH(order_date) AS month_num,
+        SUM(sales_amount) AS revenue
+    FROM qatar_mart_sales
+    WHERE order_date >= '2026-01-01'
+      AND order_date < '2026-03-01'
+    GROUP BY sales_channel, city, MONTH(order_date)
+),
+segment_change AS (
+    SELECT
+        sales_channel,
+        city,
+        MAX(CASE WHEN month_num = 1 THEN revenue ELSE 0 END) AS jan_revenue,
+        MAX(CASE WHEN month_num = 2 THEN revenue ELSE 0 END) AS feb_revenue
+    FROM segment_monthly
+    GROUP BY sales_channel, city
+)
+SELECT
+    sales_channel,
+    city,
+    ROUND(jan_revenue, 2) AS jan_revenue,
+    ROUND(feb_revenue, 2) AS feb_revenue,
+    ROUND(feb_revenue - jan_revenue, 2) AS revenue_change,
+    ROUND(
+        (feb_revenue - jan_revenue) /
+        NULLIF(jan_revenue, 0) * 100,
+        2
+    ) AS revenue_change_pct,
+    ROUND(jan_revenue - feb_revenue, 2) AS decline_contribution
+FROM segment_change
+WHERE jan_revenue > feb_revenue
+ORDER BY decline_contribution DESC
+LIMIT 20;
+
+-- ============================================================
+-- 6. ORDER STATUS CHANGE: JANUARY VS FEBRUARY
+-- ============================================================
+
+WITH status_monthly AS (
+    SELECT
+        order_status,
+        MONTH(order_date) AS month_num,
+        COUNT(DISTINCT order_id) AS orders,
+        SUM(sales_amount) AS sales_value
+    FROM qatar_mart_sales
+    WHERE order_date >= '2026-01-01'
+      AND order_date < '2026-03-01'
+    GROUP BY order_status, MONTH(order_date)
+)
+SELECT
+    order_status,
+    MAX(CASE WHEN month_num = 1 THEN orders ELSE 0 END) AS jan_orders,
+    MAX(CASE WHEN month_num = 2 THEN orders ELSE 0 END) AS feb_orders,
+    MAX(CASE WHEN month_num = 1 THEN sales_value ELSE 0 END) AS jan_value,
+    MAX(CASE WHEN month_num = 2 THEN sales_value ELSE 0 END) AS feb_value
+FROM status_monthly
+GROUP BY order_status
+ORDER BY order_status;
+
+-- ============================================================
+-- 7. CANCELLATION / RETURN RATE
+-- Rate based on order count.
+-- ============================================================
+
+WITH monthly_orders AS (
+    SELECT
+        MONTH(order_date) AS month_num,
+        COUNT(DISTINCT order_id) AS total_orders,
+        COUNT(DISTINCT CASE
+            WHEN order_status IN ('Cancelled', 'Returned')
+            THEN order_id
+        END) AS cancelled_returned_orders
+    FROM qatar_mart_sales
+    WHERE order_date >= '2026-01-01'
+      AND order_date < '2026-03-01'
+    GROUP BY MONTH(order_date)
+)
+SELECT
+    month_num,
+    total_orders,
+    cancelled_returned_orders,
+    ROUND(
+        cancelled_returned_orders /
+        NULLIF(total_orders, 0) * 100,
+        2
+    ) AS cancellation_return_rate_pct
+FROM monthly_orders
+ORDER BY month_num;
+
+-- ============================================================
+-- 8. PRODUCT-LEVEL DECLINE
+-- ============================================================
+
+WITH product_monthly AS (
+    SELECT
+        product,
+        product_category,
+        MONTH(order_date) AS month_num,
+        SUM(sales_amount) AS revenue
+    FROM qatar_mart_sales
+    WHERE order_date >= '2026-01-01'
+      AND order_date < '2026-03-01'
+    GROUP BY product, product_category, MONTH(order_date)
+),
+product_change AS (
+    SELECT
+        product,
+        product_category,
+        MAX(CASE WHEN month_num = 1 THEN revenue ELSE 0 END) AS jan_revenue,
+        MAX(CASE WHEN month_num = 2 THEN revenue ELSE 0 END) AS feb_revenue
+    FROM product_monthly
+    GROUP BY product, product_category
+)
+SELECT
+    product,
+    product_category,
+    ROUND(jan_revenue, 2) AS jan_revenue,
+    ROUND(feb_revenue, 2) AS feb_revenue,
+    ROUND(feb_revenue - jan_revenue, 2) AS revenue_change,
+    ROUND(jan_revenue - feb_revenue, 2) AS decline_contribution
+FROM product_change
+WHERE jan_revenue > feb_revenue
+ORDER BY decline_contribution DESC
+LIMIT 20;
+
+-- ============================================================
+-- 9. FINAL ROOT-CAUSE SCORECARD
+-- Combines major dimensions into a single investigation view.
+-- ============================================================
+
+WITH channel AS (
+    SELECT
+        'Channel' AS dimension,
+        sales_channel AS segment,
+        SUM(CASE WHEN MONTH(order_date) = 1 THEN sales_amount ELSE 0 END)
+            AS jan_revenue,
+        SUM(CASE WHEN MONTH(order_date) = 2 THEN sales_amount ELSE 0 END)
+            AS feb_revenue
+    FROM qatar_mart_sales
+    WHERE order_date >= '2026-01-01'
+      AND order_date < '2026-03-01'
+    GROUP BY sales_channel
+),
+city AS (
+    SELECT
+        'City' AS dimension,
+        city AS segment,
+        SUM(CASE WHEN MONTH(order_date) = 1 THEN sales_amount ELSE 0 END)
+            AS jan_revenue,
+        SUM(CASE WHEN MONTH(order_date) = 2 THEN sales_amount ELSE 0 END)
+            AS feb_revenue
+    FROM qatar_mart_sales
+    WHERE order_date >= '2026-01-01'
+      AND order_date < '2026-03-01'
+    GROUP BY city
+),
+category AS (
+    SELECT
+        'Category' AS dimension,
+        product_category AS segment,
+        SUM(CASE WHEN MONTH(order_date) = 1 THEN sales_amount ELSE 0 END)
+            AS jan_revenue,
+        SUM(CASE WHEN MONTH(order_date) = 2 THEN sales_amount ELSE 0 END)
+            AS feb_revenue
+    FROM qatar_mart_sales
+    WHERE order_date >= '2026-01-01'
+      AND order_date < '2026-03-01'
+    GROUP BY product_category
+)
+SELECT
+    dimension,
+    segment,
+    ROUND(jan_revenue, 2) AS jan_revenue,
+    ROUND(feb_revenue, 2) AS feb_revenue,
+    ROUND(feb_revenue - jan_revenue, 2) AS revenue_change,
+    ROUND(jan_revenue - feb_revenue, 2) AS decline_contribution
+FROM (
+    SELECT * FROM channel
+    UNION ALL
+    SELECT * FROM city
+    UNION ALL
+    SELECT * FROM category
+) x
+WHERE jan_revenue > feb_revenue
+ORDER BY decline_contribution DESC;
 
