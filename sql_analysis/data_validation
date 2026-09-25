@@ -1,1 +1,208 @@
+/*
+QATAR MART RETAIL & E-COMMERCE
+01 - DATA VALIDATION
+
+Purpose:
+Validate the cleaned dataset after loading into MySQL.
+
+Expected table:
+qatar_mart_sales
+
+Run this script before performing EDA.
+*/
+
+-- ============================================================
+-- 1. TABLE STRUCTURE
+-- ============================================================
+
+DESCRIBE qatar_mart_sales;
+
+-- ============================================================
+-- 2. TOTAL RECORD COUNT
+-- Expected: 49,930
+-- ============================================================
+
+SELECT COUNT(*) AS total_rows
+FROM qatar_mart_sales;
+
+-- ============================================================
+-- 3. DUPLICATE ORDER IDs
+-- Expected: 0
+-- ============================================================
+
+SELECT
+    order_id,
+    COUNT(*) AS row_count
+FROM qatar_mart_sales
+GROUP BY order_id
+HAVING COUNT(*) > 1;
+
+-- ============================================================
+-- 4. NULL / MISSING VALUE CHECK
+-- ============================================================
+
+SELECT
+    SUM(order_id IS NULL) AS missing_order_id,
+    SUM(order_date IS NULL) AS missing_order_date,
+    SUM(customer_id IS NULL) AS missing_customer_id,
+    SUM(gender IS NULL) AS missing_gender,
+    SUM(age IS NULL) AS missing_age,
+    SUM(city IS NULL) AS missing_city,
+    SUM(product_category IS NULL) AS missing_product_category,
+    SUM(product IS NULL) AS missing_product,
+    SUM(quantity IS NULL) AS missing_quantity,
+    SUM(unit_price IS NULL) AS missing_unit_price,
+    SUM(discount IS NULL) AS missing_discount,
+    SUM(payment_method IS NULL) AS missing_payment_method,
+    SUM(sales_channel IS NULL) AS missing_sales_channel,
+    SUM(salesperson IS NULL) AS missing_salesperson,
+    SUM(order_status IS NULL) AS missing_order_status,
+    SUM(sales_amount IS NULL) AS missing_sales_amount,
+    SUM(net_sales_calc IS NULL) AS missing_net_sales_calc,
+    SUM(year IS NULL) AS missing_year,
+    SUM(month IS NULL) AS missing_month
+FROM qatar_mart_sales;
+
+-- ============================================================
+-- 5. DATE RANGE
+-- Expected: 2025-01-01 to 2026-06-30
+-- ============================================================
+
+SELECT
+    MIN(order_date) AS earliest_order_date,
+    MAX(order_date) AS latest_order_date
+FROM qatar_mart_sales;
+
+-- ============================================================
+-- 6. YEAR / MONTH CONSISTENCY
+-- ============================================================
+
+SELECT
+    COUNT(*) AS year_mismatch_count
+FROM qatar_mart_sales
+WHERE year <> YEAR(order_date);
+
+SELECT
+    COUNT(*) AS month_mismatch_count
+FROM qatar_mart_sales
+WHERE month <> MONTH(order_date);
+
+-- ============================================================
+-- 7. NUMERICAL BUSINESS-RULE VALIDATION
+-- ============================================================
+
+-- Invalid age
+SELECT COUNT(*) AS invalid_age
+FROM qatar_mart_sales
+WHERE age < 18 OR age > 65;
+
+-- Invalid quantity
+SELECT COUNT(*) AS invalid_quantity
+FROM qatar_mart_sales
+WHERE quantity < 1 OR quantity > 10;
+
+-- Invalid unit price
+SELECT COUNT(*) AS invalid_unit_price
+FROM qatar_mart_sales
+WHERE unit_price <= 0;
+
+-- Invalid discount
+SELECT COUNT(*) AS invalid_discount
+FROM qatar_mart_sales
+WHERE discount < 0 OR discount > 0.25;
+
+-- Invalid sales amount
+SELECT COUNT(*) AS invalid_sales_amount
+FROM qatar_mart_sales
+WHERE sales_amount < 0;
+
+-- ============================================================
+-- 8. SALES CALCULATION VALIDATION
+-- Expected maximum difference: approximately 0.005 due to rounding
+-- ============================================================
+
+SELECT
+    MAX(
+        ABS(
+            net_sales_calc -
+            (quantity * unit_price * (1 - discount))
+        )
+    ) AS max_calculation_difference
+FROM qatar_mart_sales;
+
+-- Records exceeding a reasonable rounding tolerance
+SELECT
+    order_id,
+    sales_amount,
+    net_sales_calc,
+    quantity,
+    unit_price,
+    discount,
+    ABS(
+        net_sales_calc -
+        (quantity * unit_price * (1 - discount))
+    ) AS calculation_difference
+FROM qatar_mart_sales
+WHERE ABS(
+        net_sales_calc -
+        (quantity * unit_price * (1 - discount))
+      ) > 0.01;
+
+-- ============================================================
+-- 9. UNKNOWN VALUE CHECK
+-- ============================================================
+
+SELECT
+    city,
+    COUNT(*) AS records
+FROM qatar_mart_sales
+GROUP BY city
+ORDER BY records DESC;
+
+SELECT
+    payment_method,
+    COUNT(*) AS records
+FROM qatar_mart_sales
+GROUP BY payment_method
+ORDER BY records DESC;
+
+-- ============================================================
+-- 10. DISTINCT CATEGORY CHECK
+-- ============================================================
+
+SELECT DISTINCT gender
+FROM qatar_mart_sales
+ORDER BY gender;
+
+SELECT DISTINCT sales_channel
+FROM qatar_mart_sales
+ORDER BY sales_channel;
+
+SELECT DISTINCT order_status
+FROM qatar_mart_sales
+ORDER BY order_status;
+
+SELECT DISTINCT product_category
+FROM qatar_mart_sales
+ORDER BY product_category;
+
+-- ============================================================
+-- 11. SALES VARIANCE AUDIT
+-- This field is not used as a primary analytical KPI.
+-- ============================================================
+
+SELECT
+    sales_variance,
+    COUNT(*) AS records
+FROM qatar_mart_sales
+GROUP BY sales_variance
+ORDER BY sales_variance;
+
+SELECT
+    sales_variance,
+    COUNT(*) AS records
+FROM qatar_mart_sales
+WHERE ROUND(sales_amount - net_sales_calc, 2) <> sales_variance
+GROUP BY sales_variance
+ORDER BY sales_variance;
 
