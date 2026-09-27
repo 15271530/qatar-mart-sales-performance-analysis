@@ -174,7 +174,7 @@ Develop targeted **upselling and cross-selling strategies** to increase revenue 
 
 Revenue decreased **20.9%** month-over-month in February 2026 compared with January 2026, primarily driven by a **15.22% decrease in orders** and a **15.5% decline in units sold**.
 
-![Root Cause Variances](https://app.notion.com/image/attachment%3A3cfc30bf-32da-47ee-a143-63264c00e611%3Aroot_cause_variances.png?table=block%26id=3e1ebcf1-ca65-80c4-8f13-cb4a607142f1%26spaceId=fa1ebcf1-ca65-8139-885e-00034495e447%26width=1120%26userId=18fd872b-594c-8108-b268-0002b09d35e5%26cache=v2%26imgBuildSrc=requestProxiedImageUrl)
+![image](https://github.com/15271530/qatar-mart-sales-performance-analysis/blob/31df814c3ccf4019c21ce5c24cb03b463a562031/root%20cause%20variances.png)
 
 The **Store channel** accounted for the largest share of the February revenue decline, followed by **Mesaieed and the Burger category within Food & Beverage.**
 
