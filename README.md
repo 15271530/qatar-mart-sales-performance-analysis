@@ -73,7 +73,7 @@ The key insights and recommendations focus on the following areas:
 
 The database structure consists of six tables: one central fact table (`facts_sales`) and five dimension tables (`dim_customers`, `dim_product`, `dim_payment`, `dim_channel`, and `DateTable`). The `facts_sales` table serves as the central table, linking transactional sales data to customer, product, payment, sales channel, and date dimensions.
 
-![Qatar Mart Entity Relationship Diagram](https://app.notion.com/image/attachment%3A0beb883a-9290-404f-8be9-7ef85906243a%3AChatGPT_Image_Aug_27_2026_04_20_44_PM.png?table=block%26id=3c9ebcf1-ca65-8051-960c-dc95aef7fd4a%26spaceId=fa1ebcf1-ca65-8139-885e-00034495e447%26width=1120%26userId=18fd872b-594c-8108-b268-0002b09d35e5%26cache=v2%26imgBuildSrc=requestProxiedImageUrl)
+![image](https://github.com/15271530/qatar-mart-sales-performance-analysis/blob/50689b4422cb2d7852e7caf8613103478bce8841/ChatGPT_Image_Aug_27_2026_04_20_44_PM.png)
 
 ---
 
