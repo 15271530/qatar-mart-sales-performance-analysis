@@ -43,7 +43,7 @@ The key insights and recommendations focus on the following areas:
 
 ![How is Qatar Mart Performing](https://app.notion.com/image/attachment%3A842c9265-44da-420a-98ed-6b2543c6793f%3AHow_is_Qatar_Mart_Performing.png?table=block%26id=3e2ebcf1-ca65-806c-826a-fe323f15d638%26spaceId=fa1ebcf1-ca65-8139-885e-00034495e447%26width=1890%26userId=18fd872b-594c-8108-b268-0002b09d35e5%26cache=v2%26imgBuildSrc=requestProxiedImageUrl)
 
-![Qatar Mart Analysis](https://app.notion.com/image/attachment%3Aa78c214c-816c-420a-8862-4e32ab3a3cd4%3AChatGPT_Image_Sep_21_2026_05_58_30_PM.png?table=block%26id=3c9ebcf1-ca65-802a-8724-f054c02762f2%26spaceId=fa1ebcf1-ca65-8139-885e-00034495e447%26width=1790%26userId=18fd872b-594c-8108-b268-0002b09d35e5%26cache=v2%26imgBuildSrc=requestProxiedImageUrl)
+![image](https://github.com/15271530/qatar-mart-sales-performance-analysis/blob/9bf4cec5d4455beca2cda012adf23ed43b19e5a5/x.png)
 
 #### Key Findings
 
