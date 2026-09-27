@@ -123,7 +123,7 @@ Revenue Performance
 
 **Monthly revenue fluctuations** require further analysis to determine whether changes are related to seasonality, product demand, inventory availability, or customer purchasing behavior.
 
-![image](https://app.notion.com/image/attachment%3Aaaddccb8-12cc-48ff-8aa2-4caffeab2193%3ARevenue_Leakage.png?table=block%26id=3e5ebcf1-ca65-804e-9bc3-e4b956378066%26spaceId=fa1ebcf1-ca65-8139-885e-00034495e447%26width=990%26userId=18fd872b-594c-8108-b268-0002b09d35e5%26cache=v2%26imgBuildSrc=requestProxiedImageUrl)
+![image](https://github.com/15271530/qatar-mart-sales-performance-analysis/blob/a072a2c5a9c0a996681826fa055b4120462cf525/Revenue%20Leakage.png)
 
 ```text
 Total Order Value
