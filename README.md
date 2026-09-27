@@ -99,7 +99,7 @@ Overall, the business is experiencing **volume-led growth**, but there is an opp
 
 ![imagel](
 https://github.com/15271530/qatar-mart-sales-performance-analysis/blob/a9e59ac9b2914b38df097b244b3928cb925e3af5/Revenue%20By%20Sales%20Channel.png)
-![Revenue By City](https://app.notion.com/image/attachment%3A0e4873f4-4eed-4c16-bef4-4c1d1b0bd779%3ARevenue_By_City.png?table=block%26id=3e1ebcf1-ca65-8066-8c4d-cfe605d99992%26spaceId=fa1ebcf1-ca65-8139-885e-00034495e447%26width=830%26userId=18fd872b-594c-8108-b268-0002b09d35e5%26cache=v2%26imgBuildSrc=requestProxiedImageUrl)
+![image](https://github.com/15271530/qatar-mart-sales-performance-analysis/blob/7de8dd484f8319bc196a2d958019e0b736f93af2/Revenue%20By%20City.png)
 
 **Online sales are the largest revenue-generating channel**, making digital sales an important contributor to overall performance.
 
@@ -123,7 +123,7 @@ Revenue Performance
 
 **Monthly revenue fluctuations** require further analysis to determine whether changes are related to seasonality, product demand, inventory availability, or customer purchasing behavior.
 
-![Revenue Leakage](https://app.notion.com/image/attachment%3Aaaddccb8-12cc-48ff-8aa2-4caffeab2193%3ARevenue_Leakage.png?table=block%26id=3e5ebcf1-ca65-804e-9bc3-e4b956378066%26spaceId=fa1ebcf1-ca65-8139-885e-00034495e447%26width=990%26userId=18fd872b-594c-8108-b268-0002b09d35e5%26cache=v2%26imgBuildSrc=requestProxiedImageUrl)
+![image](https://app.notion.com/image/attachment%3Aaaddccb8-12cc-48ff-8aa2-4caffeab2193%3ARevenue_Leakage.png?table=block%26id=3e5ebcf1-ca65-804e-9bc3-e4b956378066%26spaceId=fa1ebcf1-ca65-8139-885e-00034495e447%26width=990%26userId=18fd872b-594c-8108-b268-0002b09d35e5%26cache=v2%26imgBuildSrc=requestProxiedImageUrl)
 
 ```text
 Total Order Value
