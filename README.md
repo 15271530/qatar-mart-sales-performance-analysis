@@ -41,7 +41,7 @@ The key insights and recommendations focus on the following areas:
 
 > **Revenue performance was volatile across the Analysis period: (January 2025 – June 2026). Monthly revenue averaged approximately QAR 2.08M, with performance strengthening through 2025 before declining during early 2026. Revenue reached its highest point in August 2025 at approximately QAR 2.24M, while March 2026 recorded the lowest monthly revenue at approximately QAR 1.74M.**
 
-![How is Qatar Mart Performing](https://app.notion.com/image/attachment%3A842c9265-44da-420a-98ed-6b2543c6793f%3AHow_is_Qatar_Mart_Performing.png?table=block%26id=3e2ebcf1-ca65-806c-826a-fe323f15d638%26spaceId=fa1ebcf1-ca65-8139-885e-00034495e447%26width=1890%26userId=18fd872b-594c-8108-b268-0002b09d35e5%26cache=v2%26imgBuildSrc=requestProxiedImageUrl)
+![image](https://github.com/15271530/qatar-mart-sales-performance-analysis/blob/855cb21d3914938ae4322c43f80a74a0e5fbb8eb/QatarMart%20KPI.png)
 
 ![image](https://github.com/15271530/qatar-mart-sales-performance-analysis/blob/9bf4cec5d4455beca2cda012adf23ed43b19e5a5/x.png)
 
