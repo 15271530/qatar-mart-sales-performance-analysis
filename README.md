@@ -178,7 +178,7 @@ Revenue decreased **20.9%** month-over-month in February 2026 compared with Janu
 
 The **Store channel** accounted for the largest share of the February revenue decline, followed by **Mesaieed and the Burger category within Food & Beverage.**
 
-![Channel Analysis](https://app.notion.com/image/attachment%3A0ea81165-365a-46ec-a6b9-e452867b5aa1%3Achannel_analysis.png?table=block%26id=3e2ebcf1-ca65-802d-841b-f6b8c3f625f5%26spaceId=fa1ebcf1-ca65-8139-885e-00034495e447%26width=920%26userId=18fd872b-594c-8108-b268-0002b09d35e5%26cache=v2%26imgBuildSrc=requestProxiedImageUrl)
+![image](https://github.com/15271530/qatar-mart-sales-performance-analysis/blob/b7977a23da86709fa6ce16b71d232d253e10383d/channel%20analysis.png)
 
 ![Regional Analysis](https://app.notion.com/image/attachment%3Ab6d40361-59d2-43c1-a31a-4996995b6128%3ARegional_analysis.png?table=block%26id=3e1ebcf1-ca65-8092-9528-dec2c333e2ec%26spaceId=fa1ebcf1-ca65-8139-885e-00034495e447%26width=990%26userId=18fd872b-594c-8108-b268-0002b09d35e5%26cache=v2%26imgBuildSrc=requestProxiedImageUrl)
 
