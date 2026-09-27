@@ -97,8 +97,8 @@ Overall, the business is experiencing **volume-led growth**, but there is an opp
 
 #### 2. Key Drivers of Sales Performance
 
-![Revenue By Sales Channel](https://app.notion.com/image/attachment%3A8cd171a1-8e5d-4f2c-becb-a0c149b7f0ee%3ARevenue_By_Sales_Channel.png?table=block%26id=3e2ebcf1-ca65-80e0-bdad-e32104e79f44%26spaceId=fa1ebcf1-ca65-8139-885e-00034495e447%26width=990%26userId=18fd872b-594c-8108-b268-0002b09d35e5%26cache=v2%26imgBuildSrc=requestProxiedImageUrl)
-
+![imagel](
+https://github.com/15271530/qatar-mart-sales-performance-analysis/blob/a9e59ac9b2914b38df097b244b3928cb925e3af5/Revenue%20By%20Sales%20Channel.png)
 ![Revenue By City](https://app.notion.com/image/attachment%3A0e4873f4-4eed-4c16-bef4-4c1d1b0bd779%3ARevenue_By_City.png?table=block%26id=3e1ebcf1-ca65-8066-8c4d-cfe605d99992%26spaceId=fa1ebcf1-ca65-8139-885e-00034495e447%26width=830%26userId=18fd872b-594c-8108-b268-0002b09d35e5%26cache=v2%26imgBuildSrc=requestProxiedImageUrl)
 
 **Online sales are the largest revenue-generating channel**, making digital sales an important contributor to overall performance.
