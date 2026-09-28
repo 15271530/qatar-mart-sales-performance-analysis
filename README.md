@@ -8,8 +8,23 @@
   Data Analytics Portfolio Project | Qatar
 </p>
 
+<div align="center">
+  <img
+    src="https://github.com/15271530/qatar-mart-sales-performance-analysis/blob/main/Visuals/QatarMart%20Retail%20and%20Ecommerce%20Company%20LOGO.png?raw=true"
+    width="120"
+    alt="Qatar Mart Logo"
+  />
 
+  <h1>Qatar Mart Sales Performance Analysis</h1>
 
+  <p>Data Analytics Portfolio Project | Qatar</p>
+</div>
+
+---
+
+## Qatar Mart Retail & E-commerce Company
+
+### Client Background
 
 
 
