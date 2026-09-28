@@ -1,7 +1,7 @@
 
 <table>
   <tr>
-    <td width="180" align="center" valign="middle">
+    <td width="200" align="center" valign="middle">
       <img src="https://github.com/15271530/qatar-mart-sales-performance-analysis/blob/main/Visuals/QatarMart%20Retail%20and%20Ecommerce%20Company%20LOGO.png?raw=true"
            width="150"
            alt="Qatar Mart Logo">
