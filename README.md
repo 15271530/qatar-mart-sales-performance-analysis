@@ -25,12 +25,6 @@ Retail & E-commerce Sales Analytics | 2025–2026
 </div>
 
 ---
-
-
-
-
-
-
 ### Client Background
 
 **Qatar Mart** is a retail and e-commerce business operating in Qatar, serving customers through physical retail locations and online sales channels. Established in 2025, the company has grown and expanded over the past year. It has faced increasing competition from peer companies, as well as change in customer demand, purchasing behavior, and channels dynamics.
@@ -69,9 +63,13 @@ The key insights and recommendations focus on the following areas:
 
 > **Revenue performance was volatile across the Analysis period: (January 2025 – June 2026). Monthly revenue averaged approximately QAR 2.08M, with performance strengthening through 2025 before declining during early 2026. Revenue reached its highest point in August 2025 at approximately QAR 2.24M, while March 2026 recorded the lowest monthly revenue at approximately QAR 1.74M.**
 
-![image](https://github.com/15271530/qatar-mart-sales-performance-analysis/blob/855cb21d3914938ae4322c43f80a74a0e5fbb8eb/QatarMart%20KPI.png)
 
-![image](https://github.com/15271530/qatar-mart-sales-performance-analysis/blob/9bf4cec5d4455beca2cda012adf23ed43b19e5a5/x.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/15271530/qatar-mart-sales-performance-analysis/855cb21d3914938ae4322c43f80a74a0e5fbb8eb/QatarMart%20KPI.png" width="900">
+</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/15271530/qatar-mart-sales-performance-analysis/9bf4cec5d4455beca2cda012adf23ed43b19e5a5/x.png" width="900">
+</p>
 
 #### Key Findings
 
@@ -101,7 +99,9 @@ The key insights and recommendations focus on the following areas:
 
 The database structure consists of six tables: one central fact table (`facts_sales`) and five dimension tables (`dim_customers`, `dim_product`, `dim_payment`, `dim_channel`, and `DateTable`). The `facts_sales` table serves as the central table, linking transactional sales data to customer, product, payment, sales channel, and date dimensions.
 
-![image](https://github.com/15271530/qatar-mart-sales-performance-analysis/blob/50689b4422cb2d7852e7caf8613103478bce8841/ChatGPT_Image_Aug_27_2026_04_20_44_PM.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/15271530/qatar-mart-sales-performance-analysis/50689b4422cb2d7852e7caf8613103478bce8841/ChatGPT_Image_Aug_27_2026_04_20_44_PM.png" width="700">
+</p>
 
 ---
 
@@ -125,9 +125,11 @@ Overall, the business is experiencing **volume-led growth**, but there is an opp
 
 #### 2. Key Drivers of Sales Performance
 
-![imagel](
-https://github.com/15271530/qatar-mart-sales-performance-analysis/blob/a9e59ac9b2914b38df097b244b3928cb925e3af5/Revenue%20By%20Sales%20Channel.png)
-![image](https://github.com/15271530/qatar-mart-sales-performance-analysis/blob/7de8dd484f8319bc196a2d958019e0b736f93af2/Revenue%20By%20City.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/15271530/qatar-mart-sales-performance-analysis/a9e59ac9b2914b38df097b244b3928cb925e3af5/Revenue%20By%20Sales%20Channel.png" width="50%">
+  &nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/15271530/qatar-mart-sales-performance-analysis/7de8dd484f8319bc196a2d958019e0b736f93af2/Revenue%20By%20City.png" width="47%">
+</p>
 
 **Online sales are the largest revenue-generating channel**, making digital sales an important contributor to overall performance.
 
@@ -151,7 +153,11 @@ Revenue Performance
 
 **Monthly revenue fluctuations** require further analysis to determine whether changes are related to seasonality, product demand, inventory availability, or customer purchasing behavior.
 
-![image](https://github.com/15271530/qatar-mart-sales-performance-analysis/blob/a072a2c5a9c0a996681826fa055b4120462cf525/Revenue%20Leakage.png)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/15271530/qatar-mart-sales-performance-analysis/a072a2c5a9c0a996681826fa055b4120462cf525/Revenue%20Leakage.png" width="900">
+</p>
+
 
 ```text
 Total Order Value
@@ -202,13 +208,20 @@ Develop targeted **upselling and cross-selling strategies** to increase revenue 
 
 Revenue decreased **20.9%** month-over-month in February 2026 compared with January 2026, primarily driven by a **15.22% decrease in orders** and a **15.5% decline in units sold**.
 
-![image](https://github.com/15271530/qatar-mart-sales-performance-analysis/blob/31df814c3ccf4019c21ce5c24cb03b463a562031/root%20cause%20variances.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/15271530/qatar-mart-sales-performance-analysis/31df814c3ccf4019c21ce5c24cb03b463a562031/root%20cause%20variances.png" width="900">
+</p>
 
 The **Store channel** accounted for the largest share of the February revenue decline, followed by **Mesaieed and the Burger category within Food & Beverage.**
 
-![image](https://github.com/15271530/qatar-mart-sales-performance-analysis/blob/b7977a23da86709fa6ce16b71d232d253e10383d/channel%20analysis.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/15271530/qatar-mart-sales-performance-analysis/b7977a23da86709fa6ce16b71d232d253e10383d/channel%20analysis.png" width="900">
+</p>
 
-![image](https://github.com/15271530/qatar-mart-sales-performance-analysis/blob/a83513dbcf4fced3a0edd08414d862dabaa42fd2/Regional%20analysis.png)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/15271530/qatar-mart-sales-performance-analysis/a83513dbcf4fced3a0edd08414d862dabaa42fd2/Regional%20analysis.png" width="900">
+</p>
 
 The findings suggest that the February decline was **primarily volume-driven rather than AOV-driven**.
 
