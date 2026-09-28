@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="https://github.com/15271530/qatar-mart-sales-performance-analysis/blob/acfcb951abcb30524e8a2576abdd5313d3453fe2/Visuals/QatarMart%20Retail%20and%20Ecommerce%20Company%20LOGO.png?raw=true" width="120" alt="Qatar Mart Logo">
-</p>
-
 
 <table>
   <tr>
@@ -11,8 +7,7 @@
            alt="Qatar Mart Logo">
     </td>
     <td valign="middle">
-      <h1>Qatar Mart Sales Performance Analysis</h1>
-      <p>Data Analytics Portfolio Project | Qatar</p>
+      <h1>Qatar Mart Sales Performance Analysis</h1
       <p><strong>Retail & E-commerce | Business Intelligence | Data Analytics</strong></p>
     </td>
   </tr>
