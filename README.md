@@ -1,6 +1,3 @@
-
-![img src] = ("https://github.com/15271530/qatar-mart-sales-performance-analysis/blob/ae5efdffb78bbfe61147580f73aacb29fe188082/Visuals/QatarMart%20Retail%20and%20Ecommerce%20Company%20LOGO.png"
-
 <p align="center">
   <img src="https://github.com/15271530/qatar-mart-sales-performance-analysis/blob/acfcb951abcb30524e8a2576abdd5313d3453fe2/Visuals/QatarMart%20Retail%20and%20Ecommerce%20Company%20LOGO.png?raw=true" width="120" alt="Qatar Mart Logo">
 </p>
