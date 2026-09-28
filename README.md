@@ -1,9 +1,8 @@
 
 ![img src] = ("https://github.com/15271530/qatar-mart-sales-performance-analysis/blob/ae5efdffb78bbfe61147580f73aacb29fe188082/Visuals/QatarMart%20Retail%20and%20Ecommerce%20Company%20LOGO.png"
 
-
 <p align="center">
-  <img src="[images/logo.png](https://github.com/15271530/qatar-mart-sales-performance-analysis/blob/ae5efdffb78bbfe61147580f73aacb29fe188082/Visuals/QatarMart%20Retail%20and%20Ecommerce%20Company%20LOGO.png)" width="120" alt="Qatar Mart Logo">
+  <img src="images/logo.png" width="120" alt="Qatar Mart Logo">
 </p>
 
 <h1 align="center">Qatar Mart Sales Performance Analysis</h1>
@@ -11,7 +10,6 @@
 <p align="center">
   Data Analytics Portfolio Project | Qatar
 </p>
-
 
 
 
