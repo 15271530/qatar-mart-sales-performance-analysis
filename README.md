@@ -1,14 +1,14 @@
 
 <table>
   <tr>
-    <td width="350" align="center" valign="middle">
+    <td width="400" align="center" valign="middle">
       <img src="https://github.com/15271530/qatar-mart-sales-performance-analysis/blob/main/Visuals/QatarMart%20Retail%20and%20Ecommerce%20Company%20LOGO.png?raw=true"
            width="150"
            alt="Qatar Mart Logo">
     </td>
     <td valign="middle">
       <h1>Qatar Mart Sales Performance Analysis</h1
-      <p><strong>Retail & E-commerce | Business Intelligence | Data Analytics</strong></p>
+      <p><strong>Retail & E-commerce  </strong></p>
     </td>
   </tr>
 </table>
