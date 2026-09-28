@@ -1,35 +1,35 @@
+<div align="center">
 
 <table>
-  <tr>
-    <td width="400" align="center" valign="middle">
-      <img src="https://github.com/15271530/qatar-mart-sales-performance-analysis/blob/main/Visuals/QatarMart%20Retail%20and%20Ecommerce%20Company%20LOGO.png?raw=true"
-           width="150"
-           alt="Qatar Mart Logo">
-    </td>
-    <td valign="middle">
-      <h1>Qatar Mart Sales Performance Analysis</h1
-      <p><strong>Retail & E-commerce  </strong></p>
-    </td>
-  </tr>
+<tr>
+<td width="200" align="center">
+
+<img src="https://github.com/15271530/qatar-mart-sales-performance-analysis/blob/main/Visuals/QatarMart%20Retail%20and%20Ecommerce%20Company%20LOGO.png?raw=true)" width="160">
+
+</td>
+
+<td width="700" align="left">
+
+<h1>Sales Performance Analysis</h1>
+
+<h3>QatarMart Retail & E-commerce Company</h3>
+
+<p>
+Retail & E-commerce Sales Analytics | 2025–2026
+</p>
+
+</td>
+</tr>
 </table>
 
-<hr>
+</div>
 
-## Qatar Mart Retail & E-commerce Company
-
-### Client Background
-
-Qatar Mart is a retail and e-commerce business operating in Qatar, serving customers through physical retail locations and online sales channels. Established in 2025, the company has grown and expanded over the past year.
-
-## Qatar Mart Retail & E-commerce Company
-
-### Client Background
+---
 
 
 
 
 
-## Qatar Mart Retail & E-commerce Company
 
 ### Client Background
 
