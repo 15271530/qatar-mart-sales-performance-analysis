@@ -155,7 +155,7 @@ Revenue Performance
 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/15271530/qatar-mart-sales-performance-analysis/a072a2c5a9c0a996681826fa055b4120462cf525/Revenue%20Leakage.png" width="900">
+  <img src="https://raw.githubusercontent.com/15271530/qatar-mart-sales-performance-analysis/a072a2c5a9c0a996681826fa055b4120462cf525/Revenue%20Leakage.png" width="600">
 </p>
 
 
@@ -209,20 +209,16 @@ Develop targeted **upselling and cross-selling strategies** to increase revenue 
 Revenue decreased **20.9%** month-over-month in February 2026 compared with January 2026, primarily driven by a **15.22% decrease in orders** and a **15.5% decline in units sold**.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/15271530/qatar-mart-sales-performance-analysis/31df814c3ccf4019c21ce5c24cb03b463a562031/root%20cause%20variances.png" width="900">
+  <img src="https://raw.githubusercontent.com/15271530/qatar-mart-sales-performance-analysis/31df814c3ccf4019c21ce5c24cb03b463a562031/root%20cause%20variances.png" width="700">
 </p>
 
 The **Store channel** accounted for the largest share of the February revenue decline, followed by **Mesaieed and the Burger category within Food & Beverage.**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/15271530/qatar-mart-sales-performance-analysis/b7977a23da86709fa6ce16b71d232d253e10383d/channel%20analysis.png" width="900">
+  <img src="https://raw.githubusercontent.com/15271530/qatar-mart-sales-performance-analysis/b7977a23da86709fa6ce16b71d232d253e10383d/channel%20analysis.png" width="47%">
+  &nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/15271530/qatar-mart-sales-performance-analysis/a83513dbcf4fced3a0edd08414d862dabaa42fd2/Regional%20analysis.png" width="47%">
 </p>
-
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/15271530/qatar-mart-sales-performance-analysis/a83513dbcf4fced3a0edd08414d862dabaa42fd2/Regional%20analysis.png" width="900">
-</p>
-
 The findings suggest that the February decline was **primarily volume-driven rather than AOV-driven**.
 
 #### What Management Should Investigate
