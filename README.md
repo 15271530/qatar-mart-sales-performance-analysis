@@ -35,7 +35,7 @@ Reporting to the Head of Operations, an in-depth analysis was conducted to evalu
 
 The key insights and recommendations focus on the following areas:
 
-#### Stakeholder Questions
+### Stakeholder Questions
 
 **Executive Management**
 
@@ -57,7 +57,7 @@ The key insights and recommendations focus on the following areas:
 
 ##### Business Question
 
-**How is overall revenue performing and what are the major changes in business performance?**
+-How is overall revenue performing and what are the major changes in business performance?
 
 ##### Executive Summary
 
