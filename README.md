@@ -1,7 +1,5 @@
-# qatar-mart-sales-performance-analysis
-End-to-end retail and e-commerce sales performance analysis using SQL, Power BI, and business-focused insights.
 
-## Qatar Mart Retail & E-commerce Company
+![Qatarmart_lOGO](https://github.com/15271530/qatar-mart-sales-performance-analysis/blob/ae5efdffb78bbfe61147580f73aacb29fe188082/Visuals/QatarMart%20Retail%20and%20Ecommerce%20Company%20LOGO.png)                         ## Qatar Mart Retail & E-commerce Company
 
 ### Client Background
 
