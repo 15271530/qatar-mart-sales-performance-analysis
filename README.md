@@ -33,22 +33,16 @@ Qatar Mart's customer base is approaching **9,500 customers**, with more than **
 
 Reporting to the Head of Operations, an in-depth analysis was conducted to evaluate **Qatar Mart's** performance over the past year (2025–2026). This comprehensive review provides valuable insights that the internal cross-functional team can use to streamline processes and enhance **Qatar Mart's** commercial performance.
 
-The key insights and recommendations focus on the following areas:
+**The key insights and recommendations focus on the following areas:**
 
-### Stakeholder Questions
+1. **Executive Management**
+   - How is overall revenue performing, and what are the major changes in business performance?
 
-**Executive Management**
+2. **Sales Manager**
+   - What is driving changes in revenue, and where are the major opportunities and risks?
 
-**How is overall revenue performing and what are the major changes in business performance?**
-
-**Sales Manager**
-
-**What is driving changes in revenue, and where are the major opportunities and risks?**
-
-**Product/Category Manager**
-
-**What drove the February 2026 revenue decline, and which channels, locations, and product categories contributed most?**
-
+3. **Product/Category Manager**
+   - What drove the February 2026 revenue decline, and which sales channels, locations, and product categories contributed most?
 ---
 
 ## Analytical Findings
@@ -109,7 +103,7 @@ The database structure consists of six tables: one central fact table (`facts_sa
 
 ### Business Question
 
-> **What is driving changes in revenue, and where are the major opportunities and risks?**
+  **What is driving changes in revenue, and where are the major opportunities and risks?**
 
 #### Key Findings
 
